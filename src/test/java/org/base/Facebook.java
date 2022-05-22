@@ -1,6 +1,8 @@
 package org.base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -14,6 +16,11 @@ public class Facebook {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://fb.com");
+		WebElement username = driver.findElement(By.id("email"));
+		username.sendKeys("subash");
+		WebElement password = driver.findElement(By.id("pass"));
+		password.sendKeys("123456");
+		driver.findElement(By.name("login")).click();
 	}
 
 }
