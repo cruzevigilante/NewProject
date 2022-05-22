@@ -18,6 +18,9 @@ public class Facebook {
 		driver.get("https://fb.com");
 		WebElement username = driver.findElement(By.id("email"));
 		username.sendKeys("subash");
+		WebElement password = driver.findElement(By.id("pass"));
+		password.sendKeys("123456");
+		driver.findElement(By.name("login")).click();
 	}
 
 }
